@@ -9,4 +9,7 @@ class Book < ActiveRecord::Base
   validates :author, presence: true
   validates :ISBN, presence: true
   validates :ISBN, uniqueness: true
+
+  belongs_to :library
+  belongs_to :patron
 end

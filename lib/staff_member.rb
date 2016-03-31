@@ -7,4 +7,5 @@ class StaffMember < ActiveRecord::Base
   validates :email, presence: true
   validates :emali, uniqueness: true
 
+  belongs_to :library
 end

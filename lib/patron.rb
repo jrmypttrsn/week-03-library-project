@@ -7,4 +7,5 @@ class Patron < ActiveRecord::Base
   validates :email, presence: true
   validates :emali, uniqueness: true
 
+  has_many :books
 end

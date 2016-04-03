@@ -15,4 +15,18 @@ class Library < ActiveRecord::Base
   has_many :staff_members
   has_many :books
 
+  def view_library_records
+    puts "#{id}. Branch Name: #{branch_name}"
+    puts "Address: #{address}"
+    puts "Phone Number: #{phone_number}"
+  end
+
+  def all_library_records
+  	puts "#{id}. Branch Name: #{branch_name}"
+    puts "Address: #{address}"
+    puts "Phone Number: #{phone_number}"
+    puts "Staff Members: #{staff_members}"
+    puts "Books: #{books}"  	
+  end
+
 end

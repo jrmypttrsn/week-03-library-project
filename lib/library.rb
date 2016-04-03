@@ -21,12 +21,12 @@ class Library < ActiveRecord::Base
     puts "Phone Number: #{phone_number}"
   end
 
-  def all_library_records
-  	puts "#{id}. Branch Name: #{branch_name}"
-    puts "Address: #{address}"
-    puts "Phone Number: #{phone_number}"
-    puts "Staff Members: #{staff_members}"
-    puts "Books: #{books}"  	
-  end
+  # def all_library_records
+  # 	puts "#{id}. Branch Name: #{branch_name}"
+  #   puts "Address: #{address}"
+  #   puts "Phone Number: #{phone_number}"
+  #   puts "Staff Members: #{staff_members}"
+  #   puts "Books: #{books}"  	
+  # end
 
 end

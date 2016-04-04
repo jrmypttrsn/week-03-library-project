@@ -61,7 +61,7 @@ def libraries_menu
   choice = ""
 
   while choice != "back"
-    puts "\n\n\nDead Guy Library Branches Main Menu"
+    puts "\n\n\nDead Guy Library System\u2122 Branches Main Menu"
     puts "1. View all library branches"
     puts "2. Create a new library"
     puts "Back: head back to the main menu"
@@ -75,6 +75,7 @@ def libraries_menu
 
     if choice == "1"
       puts "You chose to view all library branches"
+      library_records
     elsif choice == "2"
       puts "You chose to create a new library"
     elsif choice == "back"
@@ -83,11 +84,75 @@ def libraries_menu
   end
 end
 
-# def staff_members_menu
+def library_records
+  choice = ""
+
+  while choice != "back"
+  puts "\n\n\nAll Dead Guy Library System\u2122 Branches:"
+  Library.all.each do |l|
+  	puts l.view_library_records
+  end
+
+  puts "\nPlease select one of the following options:\n1. Select a library\n"\
+  "Back. Go back to Library Menu\n\n >>"
+  choice = gets.chomp.downcase
+  
+  if choice == "1"
+      Library.find_by_id(1)
+    elsif choice == "2"
+      Library.find_by_id(2)
+    elsif choice == "back"
+      puts "Back to the main menu"
+    end
+  end
+
+end
+
+def staff_members_menu
+	choice = ""
+
+  while choice != "back"
+    puts "\n\n\nDead Guy Library System\u2122 Staff Members Main Menu"
+    puts "1. View all staff members"
+    puts "2. Create a new staff member"
+    puts "Back: head back to the main menu"
+    print "What is your choice? "
+    choice = gets.chomp.downcase
+
+    while choice != "1" && choice != "2" && choice != "back"
+      print "Sorry, that's invalid. Try again: "
+      choice = gets.chomp.downcase
+    end
+
+    if choice == "1"
+      puts "You chose to view all staff members"
+      staff_member_records
+    elsif choice == "2"
+      puts "You chose to create a new staff member"
+      # create_new_staff_member
+    elsif choice == "back"
+      puts "Back to the main menu"
+    end
+  end
+end
+
+def staff_member_records
+	choice = ""
+
+	while choice != "back"
+	puts "\n\n\nAll Dead Guy Library System\u2122 Staff Members:"
+	StaffMember.all.each do |s|
+		puts s.view_staff_member_records
+		end
+	end
+end
+
+# def create_new_staff_member
 	
 # end
+# end
 
-# def books_menu
+# def books_menud
 	
 # end
 
